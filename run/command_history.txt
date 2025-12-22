@@ -1,0 +1,15 @@
+/gamemode survival
+/gamemode creative
+/setblock ~ ~ ~ air
+/setblock ~ ~ ~ minecraft:air replace
+/tp @s ~ ~ -60
+/tp @s ~ -60 ~
+/effect give @s minecraft:night_vision
+/effect give @s minecraft:night_vision infinite
+/give @s minecraft:chain_command_block
+/give @s minecraft:repe
+/give @s minecraft:repeating_command_block
+/tag @s add self
+/tag @n[tag=!self] add hc_hp_monster
+/give @s under_a_jade_tree:jade
+/give @s under_a_jade_tree:null_log

@@ -1,0 +1,193 @@
+---- Minecraft Crash Report ----
+// Surprise! Haha. Well, this is awkward.
+
+Time: 2025-12-18 00:00:35
+Description: Ticking entity
+
+java.lang.ClassCastException: class net.minecraft.server.level.ServerPlayer cannot be cast to class net.minecraft.world.entity.TamableAnimal (net.minecraft.server.level.ServerPlayer and net.minecraft.world.entity.TamableAnimal are in module minecraft@1.21.1 of loader 'TRANSFORMER' @7a231dfd)
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.Entity.handler$zza000$under_a_jade_tree$isInvulnerable(Entity.java:3921) ~[neoforge-21.1.216.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:under_a_jade_tree.mixins.json:TamableAnimalMixin from mod under_a_jade_tree,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.Entity.isInvulnerable(Entity.java) ~[neoforge-21.1.216.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:under_a_jade_tree.mixins.json:TamableAnimalMixin from mod under_a_jade_tree,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.LivingEntity.canBeSeenAsEnemy(LivingEntity.java:908) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.player.Player.canBeSeenAsEnemy(Player.java:967) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.LivingEntity.canAttack(LivingEntity.java:900) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.targeting.TargetingConditions.test(TargetingConditions.java:73) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.EntityGetter.getNearestEntity(EntityGetter.java:161) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.EntityGetter.getNearestPlayer(EntityGetter.java:132) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal.findTarget(NearestAttackableTargetGoal.java:74) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal.canUse(NearestAttackableTargetGoal.java:52) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.goal.WrappedGoal.canUse(WrappedGoal.java:29) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.goal.GoalSelector.tick(GoalSelector.java:101) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.Mob.serverAiStep(Mob.java:789) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.LivingEntity.aiStep(LivingEntity.java:2767) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.Mob.aiStep(Mob.java:571) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.monster.Monster.aiStep(Monster.java:44) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.monster.AbstractSkeleton.aiStep(AbstractSkeleton.java:117) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.LivingEntity.tick(LivingEntity.java:2493) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.Mob.tick(Mob.java:357) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.monster.Skeleton.tick(Skeleton.java:66) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ServerLevel.tickNonPassenger(ServerLevel.java:777) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.Level.guardEntityTick(Level.java:610) ~[neoforge-21.1.216.jar%23189!/:?] {re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ServerLevel.lambda$tick$2(ServerLevel.java:423) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:53) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:403) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:1052) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:932) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:113) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:713) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:267) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.Entity.handler$zza000$under_a_jade_tree$isInvulnerable(Entity.java:3921) ~[neoforge-21.1.216.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:under_a_jade_tree.mixins.json:TamableAnimalMixin from mod under_a_jade_tree,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.Entity.isInvulnerable(Entity.java) ~[neoforge-21.1.216.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:under_a_jade_tree.mixins.json:TamableAnimalMixin from mod under_a_jade_tree,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.LivingEntity.canBeSeenAsEnemy(LivingEntity.java:908) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.player.Player.canBeSeenAsEnemy(Player.java:967) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.LivingEntity.canAttack(LivingEntity.java:900) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.targeting.TargetingConditions.test(TargetingConditions.java:73) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.EntityGetter.getNearestEntity(EntityGetter.java:161) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.EntityGetter.getNearestPlayer(EntityGetter.java:132) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal.findTarget(NearestAttackableTargetGoal.java:74) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal.canUse(NearestAttackableTargetGoal.java:52) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.goal.WrappedGoal.canUse(WrappedGoal.java:29) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.ai.goal.GoalSelector.tick(GoalSelector.java:101) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.Mob.serverAiStep(Mob.java:789) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.LivingEntity.aiStep(LivingEntity.java:2767) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.Mob.aiStep(Mob.java:571) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.monster.Monster.aiStep(Monster.java:44) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.monster.AbstractSkeleton.aiStep(AbstractSkeleton.java:117) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.LivingEntity.tick(LivingEntity.java:2493) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.Mob.tick(Mob.java:357) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.entity.monster.Skeleton.tick(Skeleton.java:66) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ServerLevel.tickNonPassenger(ServerLevel.java:777) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.Level.guardEntityTick(Level.java:610) ~[neoforge-21.1.216.jar%23189!/:?] {re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ServerLevel.lambda$tick$2(ServerLevel.java:423) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:53) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading}
+-- Entity being ticked --
+Details:
+	Entity Type: minecraft:skeleton (net.minecraft.world.entity.monster.Skeleton)
+	Entity ID: 36
+	Entity Name: Skeleton
+	Entity's Exact location: 29.50, 60.00, -0.50
+	Entity's Block location: World: (29,60,-1), Section: (at 13,12,15 in 1,3,-1; chunk contains blocks 16,-64,-16 to 31,319,-1), Region: (0,-1; contains chunks 0,-32 to 31,-1, blocks 0,-64,-512 to 511,319,-1)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: null
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.Level.guardEntityTick(Level.java:610) ~[neoforge-21.1.216.jar%23189!/:?] {re:computing_frames,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ServerLevel.lambda$tick$2(ServerLevel.java:423) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:53) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:403) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:1052) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:932) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:113) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:713) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:267) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?] {}
+
+
+-- Affected level --
+Details:
+	All players: 1 total; [ServerPlayer['Dev'/78, l='ServerLevel[New World]', x=23.98, y=83.00, z=-8.31]]
+	Chunk stats: 841
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (0,87,0), Section: (at 0,7,0 in 0,5,0; chunk contains blocks 0,-64,0 to 15,319,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Level time: 6488 game time, 6488 day time
+	Level name: New World
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Commands: true
+	Level weather: Rain time: 49251 (now: false), thunder time: 15247 (now: false)
+	Known server brands: neoforge
+	Removed feature flags: 
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+	Loaded entity count: 78
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.level.ServerLevel.fillReportDetails(ServerLevel.java:1745) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:1055) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:932) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:113) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:713) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:267) ~[neoforge-21.1.216.jar%23189!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.1
+	Minecraft Version ID: 1.21.1
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 21.0.9, Microsoft
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Microsoft
+	Memory: 143334888 bytes (136 MiB) / 603979776 bytes (576 MiB) up to 8581545984 bytes (8184 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 2600X Six-Core Processor           
+	Identifier: AuthenticAMD Family 23 Model 8 Stepping 2
+	Microarchitecture: Zen+
+	Frequency (GHz): 3.60
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: NVIDIA GeForce RTX 2060
+	Graphics card #0 vendor: NVIDIA
+	Graphics card #0 VRAM (MiB): 6144.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.15.8115
+	Memory slot #0 capacity (MiB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 2.13
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MiB): 8192.00
+	Memory slot #1 clockSpeed (GHz): 2.13
+	Memory slot #1 type: DDR4
+	Memory slot #2 capacity (MiB): 8192.00
+	Memory slot #2 clockSpeed (GHz): 2.13
+	Memory slot #2 type: DDR4
+	Memory slot #3 capacity (MiB): 8192.00
+	Memory slot #3 clockSpeed (GHz): 2.13
+	Memory slot #3 type: DDR4
+	Virtual memory max (MiB): 35792.15
+	Virtual memory used (MiB): 16621.18
+	Swap memory total (MiB): 3072.00
+	Swap memory used (MiB): 0.00
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 34794.78, total: 237600.52
+	Space in storage for workdir (MiB): available: 69930.59, total: 953852.00
+	JVM Flags: 0 total; 
+	Server Running: true
+	Player Count: 1 / 8; [ServerPlayer['Dev'/78, l='ServerLevel[New World]', x=23.98, y=83.00, z=-8.31]]
+	Active Data Packs: vanilla, mod_data, mod/under_a_jade_tree, mod/neoforge
+	Available Data Packs: bundle, trade_rebalance, vanilla, mod/neoforge, mod/under_a_jade_tree, mod_data
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	World Seed: 7994032314339285308
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'neoforge'; Server brand changed to 'neoforge'
+	Launched Version: 21.1.216
+	ModLauncher: 11.0.5+main.901c6ea8
+	ModLauncher launch target: forgeclientdev
+	ModLauncher services: 
+		sponge-mixin-0.15.2+mixin.0.8.7.jar mixin PLUGINSERVICE 
+		loader-4.0.42.jar slf4jfixer PLUGINSERVICE 
+		loader-4.0.42.jar runtime_enum_extender PLUGINSERVICE 
+		at-modlauncher-10.0.1.jar accesstransformer PLUGINSERVICE 
+		loader-4.0.42.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-11.0.5.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-11.0.5.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		javafml@4.0
+		lowcodefml@4.0
+		minecraft@4.0
+	Mod List: 
+		neoforge-21.1.216.jar                             |Minecraft                     |minecraft                     |1.21.1              |Manifest: NOSIGNATURE
+		neoforge-21.1.216.jar                             |NeoForge                      |neoforge                      |21.1.216            |Manifest: NOSIGNATURE
+		main                                              |Under a Jade Tree             |under_a_jade_tree             |0.0.1               |Manifest: NOSIGNATURE
+	Crash Report UUID: 83054dea-575f-456e-8203-39fbe71b3471
+	FML: 4.0.42
+	NeoForge: 21.1.216

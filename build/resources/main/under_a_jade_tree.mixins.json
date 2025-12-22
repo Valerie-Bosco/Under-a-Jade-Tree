@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "org.housearhal.under_a_jade_tree.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+  ],
+  "mixins": [
+    "TamableAnimalMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,14 +1,12 @@
 package org.housearhal.under_a_jade_tree.block;
 
 
-import com.mojang.datafixers.util.Pair;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.housearhal.under_a_jade_tree.generator.UJT_Tree;
 import org.housearhal.under_a_jade_tree.item.UJT_Items;
@@ -22,7 +20,7 @@ import static org.housearhal.under_a_jade_tree.UnderAJadeTree.MODID;
 public class UJT_Blocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
 
-    public static <T extends Block> Pair<DeferredBlock<T>, DeferredItem<BlockItem>> registerUJTBlock(
+    public static <T extends Block> DeferredBlock<T> registerUJTBlock(
             String name,
             Supplier<T> block
     ) {
@@ -30,19 +28,14 @@ public class UJT_Blocks {
                 name,
                 block
         );
-        DeferredItem<BlockItem> ujt_item = UJT_Items.ITEMS.register(
+        UJT_Items.ITEMS.register(
                 name,
                 () -> new BlockItem(
                         ujt_block.get(),
                         new Item.Properties()
                 )
         );
-
-
-        return new Pair<>(
-                ujt_block,
-                ujt_item
-        );
+        return ujt_block;
     }
 
     public static final UJT_Tree JADEWOODTREE = new UJT_Tree(

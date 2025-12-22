@@ -6,6 +6,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import org.housearhal.under_a_jade_tree.block.UJT_Blocks;
 
 import java.util.function.Supplier;
 
@@ -22,13 +23,13 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder()
                     .icon(() -> new ItemStack(UJT_Items.RAW_JADE.get()))
                     .title(Component.translatable("creativetab.under_a_jade_tree.ujt_items"))
-//                    .displayItems(
-//                            (itemDisplayParameters, output) -> {
-//                                output.accept(UJT_Items.RAW_JADE);
-//                                output.accept(UJT_Items.JADE);
-//                                output.accept(UJT_Blocks.JADEWOODTREE.LOG_ITEM);
-//                            }
-//                    )
+                    .displayItems(
+                            (itemDisplayParameters, output) -> {
+                                output.accept(UJT_Items.RAW_JADE);
+                                output.accept(UJT_Items.JADE);
+                                output.accept(UJT_Blocks.JADEWOODTREE.LOG.asItem());
+                            }
+                    )
                     .build()
     );
 

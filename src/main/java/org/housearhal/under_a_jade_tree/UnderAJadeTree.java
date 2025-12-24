@@ -33,8 +33,8 @@ public class UnderAJadeTree {
         modEventBus.addListener(this::commonSetup);
 
         ModCreativeModeTabs.register(modEventBus);
-        UJT_Items.register(modEventBus);
         UJT_Blocks.register(modEventBus);
+        UJT_Items.register(modEventBus);
 
 
         // Register ourselves for server and other game events we are interested in.

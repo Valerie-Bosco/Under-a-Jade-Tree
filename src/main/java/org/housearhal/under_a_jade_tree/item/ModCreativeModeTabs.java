@@ -25,9 +25,12 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.under_a_jade_tree.ujt_items"))
                     .displayItems(
                             (itemDisplayParameters, output) -> {
-                                output.accept(UJT_Items.RAW_JADE);
                                 output.accept(UJT_Items.JADE);
-                                output.accept(UJT_Blocks.JADEWOODTREE.LOG.asItem());
+                                output.accept(UJT_Items.RAW_JADE);
+                                output.accept(UJT_Blocks.JADEWOODLOG.asItem());
+                                output.accept(UJT_Blocks.JADEWOODWOOD.asItem());
+                                output.accept(UJT_Blocks.JADEWOODLEAVES.asItem());
+                                output.accept(UJT_Blocks.JADEWOODSAPLING.asItem());
                             }
                     )
                     .build()

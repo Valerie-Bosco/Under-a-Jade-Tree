@@ -10,8 +10,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.ItemAbility;
 import org.jetbrains.annotations.Nullable;
 
-public class JadeWood_Log extends RotatedPillarBlock {
-    public JadeWood_Log(Properties properties) {
+public class UJT_Log extends RotatedPillarBlock {
+    public UJT_Log(Properties properties) {
         super(properties);
     }
 

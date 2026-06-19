@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "under_a_jade_tree:item/raw_jade"
-  }
-}

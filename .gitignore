@@ -1,0 +1,12 @@
+.gradle
+build
+
+# RUN
+*/run/crash-reports
+*/run/downloads
+*/run/logs
+*/run/saves
+command_history.txt
+options.txt
+usercache.json
+usernamecache.json
